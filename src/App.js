@@ -2,10 +2,7 @@ import { useState } from "react";
 import NavBar from "./components/NavBar/NavBar";
 import CardItem from "./components/CardItems/CardItem";
 import Chart from "./components/UI/Chart";
-// import BarChartContent from "./components/BarChart/BarChartContent";
-// import PieChartContent from "./components/PieChart/PieChartContent";
 import Table from "./components/Table/Table";
-// import { Fragment } from "react";
 
 import "./App.css";
 
