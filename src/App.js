@@ -38,6 +38,12 @@ const dummy_data = {
 const test_data = {
   projectStatus: [
     {
+      name: "Test1",
+      dueDate: "5/11/2022",
+      progress: "30%",
+      bgColor: "#ff8533",
+    },
+    {
       name: "Test2",
       dueDate: "6/12/2022",
       progress: "50%",
