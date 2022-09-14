@@ -1,12 +1,14 @@
 .content {
   padding: 15px 40px;
-  background-color: #e6e6e6;
   min-height: 100vh;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   flex: 1;
-  width: 80%;
+}
+.header {
+  background-color: antiquewhite;
+  padding: 10px 20px;
 }
 
 .webpage {
@@ -31,6 +33,14 @@
 
   .dashboard-title {
     margin-bottom: 10px;
+  }
+
+  .content--invisible {
+    display: none !important;
+  }
+
+  .visible {
+    width: 100%;
   }
 }
 

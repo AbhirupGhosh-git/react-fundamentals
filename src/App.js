@@ -112,33 +112,41 @@ function App() {
     );
   } else {
     pageTitle = "🧾 Project Status";
-    content = <Table projectStatus={test_data.projectStatus} />;
+    content = (
+      <div>
+        <Table projectStatus={test_data.projectStatus} />
+      </div>
+    );
   }
 
   return (
-    <div className="webpage">
-      <NavBar
-        selectedOption={selectedOption}
-        displayDashboard={selectDashboardHandler}
-        displayProgress={selectProgressHandler}
-        className={navWidth}
-      />
+    <>
+      <div className="header">
+        <span className="navIcon" onClick={switchNavbar}>
+          &#9776;
+        </span>
+      </div>
 
-      <main className="content">
-        <div className="displayFlex">
-          <span className="navIcon" onClick={switchNavbar}>
-            &#9776;
-          </span>
+      <div className="webpage">
+        <div className={`${isVisible && "visible"} `}>
+          <NavBar
+            selectedOption={selectedOption}
+            displayDashboard={selectDashboardHandler}
+            displayProgress={selectProgressHandler}
+            className={navWidth}
+          />
         </div>
 
-        <div className="displayFlex">
-          <span className="dashboard-title">{pageTitle}</span>
-          <span>ℹ Overview</span>
-        </div>
+        <main className={`content ${isVisible && "content--invisible"}`}>
+          <div className="displayFlex">
+            <span className="dashboard-title">{pageTitle}</span>
+            <span>ℹ Overview</span>
+          </div>
 
-        {content}
-      </main>
-    </div>
+          {content}
+        </main>
+      </div>
+    </>
   );
 }
 
