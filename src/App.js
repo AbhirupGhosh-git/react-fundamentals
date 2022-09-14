@@ -132,7 +132,7 @@ function App() {
         </div>
 
         <div className="displayFlex">
-          <span>{pageTitle}</span>
+          <span className="dashboard-title">{pageTitle}</span>
           <span>ℹ Overview</span>
         </div>
 

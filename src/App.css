@@ -28,6 +28,10 @@
   .displayFlex {
     flex-direction: column;
   }
+
+  .dashboard-title {
+    margin-bottom: 10px;
+  }
 }
 
 .displayFlex:not(:last-child) {
