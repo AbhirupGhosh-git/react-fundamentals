@@ -1,0 +1,12 @@
+.card {
+  display: flex;
+  /* background-color: rgb(46, 29, 202); */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card:not(:last-child) {
+  margin-right: 30px;
+}

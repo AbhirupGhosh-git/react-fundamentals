@@ -1,0 +1,16 @@
+.tableBox {
+  background-color: #fff;
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}

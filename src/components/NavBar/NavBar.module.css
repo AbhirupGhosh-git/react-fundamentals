@@ -1,0 +1,63 @@
+.navbar {
+  background-color: antiquewhite;
+  min-height: 100vh;
+  padding: 10px 20px;
+  width: 20%;
+}
+
+.navbar--visible {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar--invisible {
+  display: none;
+}
+
+.navMenu {
+  list-style: none;
+  text-align: center;
+}
+
+.companyName {
+  color: palevioletred;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.userName {
+  margin: 30px 0;
+  font-size: 20px;
+  display: flex;
+}
+
+.userRole {
+  font-size: 15px;
+}
+
+.profilePicture {
+  font-size: 38px;
+  margin-right: 10px;
+  align-self: center;
+}
+
+.menuItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 18px;
+  transition: all 0.5s;
+  width: 100%;
+}
+
+.menuItem:hover {
+  color: palevioletred;
+  transform: scale(1.2);
+}
+
+.selected {
+  color: palevioletred;
+  font-weight: bold;
+  font-size: 20px;
+}

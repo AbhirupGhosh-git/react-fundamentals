@@ -1,0 +1,35 @@
+.card--titleHead {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.card--title {
+  margin-right: auto;
+}
+
+.card--cost {
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+.card--percentage {
+  font-size: 12px;
+}
+
+.card1 {
+  background-image: linear-gradient(to right, #ffbf80, #ff4da6);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.card2 {
+  background-image: linear-gradient(to right, #80d4ff, #6666ff);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.card3 {
+  background-image: linear-gradient(to right, #00e6e6, #33cccc);
+  padding: 20px;
+  border-radius: 10px;
+}

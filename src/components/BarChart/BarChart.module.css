@@ -1,0 +1,26 @@
+.barChart--item {
+  height: 100%;
+}
+
+.barChart--item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.barChart--inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.barChart--fill {
+  width: 5px;
+}
+
+.barChart--fill:not(:last-child) {
+  margin-right: 5px;
+}
+
+.barChart--label {
+  text-align: center;
+}

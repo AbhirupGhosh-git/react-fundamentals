@@ -1,0 +1,47 @@
+.barChart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.barChart--header {
+  display: flex;
+}
+
+.barChart--title {
+  margin-right: auto;
+}
+
+.barChart--index:not(:last-child) {
+  margin-right: 10px;
+}
+
+.barChart--content {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 20px;
+  height: 100%;
+}
+
+.indexBox {
+  border-radius: 100%;
+  height: 15px;
+  width: 15px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.chn {
+  background-color: #9900cc;
+}
+
+.usa {
+  background-color: #00aaff;
+}
+
+.ind {
+  background-color: #ff6699;
+}

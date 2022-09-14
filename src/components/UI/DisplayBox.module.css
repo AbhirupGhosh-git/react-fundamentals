@@ -1,0 +1,10 @@
+.display--box {
+  background: #fff;
+  color: black;
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.display--box:not(:last-child) {
+  margin-right: 30px;
+}
