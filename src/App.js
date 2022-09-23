@@ -1,10 +1,14 @@
 import { useState } from "react";
 import NavBar from "./components/NavBar/NavBar";
-import CardItem from "./components/CardItems/CardItem";
-import Chart from "./components/UI/Chart";
-import Table from "./components/Table/Table";
+// import CardItem from "./components/CardItems/CardItem";
+// import Chart from "./components/UI/Chart";
+// import Table from "./components/Table/Table";
 
 import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Progress from "./components/Pages/Progress";
+import NoMatch from "./components/Pages/NoMatch";
+import Home from "./components/Pages/Home";
 
 const dummy_data = {
   employees: { name: "Test", designation: "Test" },
@@ -73,20 +77,20 @@ const test_data = {
 
 function App() {
   const [isVisible, setIsVisibility] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(true);
+  // const [selectedOption, setSelectedOption] = useState(true);
 
   const switchNavbar = () => {
     setIsVisibility(!isVisible);
   };
 
-  let pageTitle = "";
-  const selectDashboardHandler = () => {
-    setSelectedOption(true);
-  };
+  // let pageTitle = "";
+  // const selectDashboardHandler = () => {
+  //   setSelectedOption(true);
+  // };
 
-  const selectProgressHandler = () => {
-    setSelectedOption(false);
-  };
+  // const selectProgressHandler = () => {
+  //   setSelectedOption(false);
+  // };
 
   let navWidth = "navbar--invisible";
   if (isVisible) {
@@ -95,35 +99,35 @@ function App() {
     navWidth = "navbar--invisible";
   }
 
-  let content = "";
-  if (selectedOption) {
-    pageTitle = "🏠 Dashboard";
-    content = (
-      <>
-        <div className="displayFlex">
-          <CardItem
-            sales={dummy_data.salesReport}
-            orders={dummy_data.orderReport}
-            visitors={dummy_data.visitorReport}
-          />
-        </div>
+  // let content = "";
+  // if (selectedOption) {
+  //   pageTitle = "🏠 Dashboard";
+  // content = (
+  //   <>
+  //     <div className="displayFlex">
+  //       <CardItem
+  //         sales={dummy_data.salesReport}
+  //         orders={dummy_data.orderReport}
+  //         visitors={dummy_data.visitorReport}
+  //       />
+  //     </div>
 
-        <div className="displayFlex">
-          <Chart
-            barChartData={dummy_data.visitSalesReport}
-            pieChartData={dummy_data.trafficSource}
-          />
-        </div>
-      </>
-    );
-  } else {
-    pageTitle = "🧾 Project Status";
-    content = (
-      <div>
-        <Table projectStatus={test_data.projectStatus} />
-      </div>
-    );
-  }
+  //     <div className="displayFlex">
+  //       <Chart
+  //         barChartData={dummy_data.visitSalesReport}
+  //         pieChartData={dummy_data.trafficSource}
+  //       />
+  //     </div>
+  //   </>
+  // );
+  // } else {
+  //   pageTitle = "🧾 Project Status";
+  // content = (
+  //   <div>
+  //     <Table projectStatus={test_data.projectStatus} />
+  //   </div>
+  // );
+  // }
 
   return (
     <>
@@ -136,20 +140,29 @@ function App() {
       <div className="webpage">
         <div className={`${isVisible && "visible"} `}>
           <NavBar
-            selectedOption={selectedOption}
-            displayDashboard={selectDashboardHandler}
-            displayProgress={selectProgressHandler}
+            // selectedOption={selectedOption}
+            // displayDashboard={selectDashboardHandler}
+            // displayProgress={selectProgressHandler}
             className={navWidth}
           />
         </div>
 
         <main className={`content ${isVisible && "content--invisible"}`}>
-          <div className="displayFlex">
+          {/* <div className="displayFlex">
             <span className="dashboard-title">{pageTitle}</span>
             <span>ℹ Overview</span>
-          </div>
+          </div> */}
 
-          {content}
+          <Routes>
+            <Route path="/" element={<Home dummy_data={dummy_data} />} />
+            <Route
+              path="/progress"
+              element={<Progress test_data={test_data.projectStatus} />}
+            ></Route>
+            <Route path="*" element={<NoMatch />} />
+          </Routes>
+
+          {/* {content} */}
         </main>
       </div>
     </>

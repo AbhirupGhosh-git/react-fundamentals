@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const Responsivestyledbar = styled.div`
@@ -7,7 +8,7 @@ const Responsivestyledbar = styled.div`
     padding: 10px 20px;
     width: 100%;
 
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 800px) {
       padding: 5px 10px;
     }
   }
@@ -31,7 +32,7 @@ const Responsivestyledbar = styled.div`
     color: palevioletred;
     font-size: 30px;
     font-weight: bold;
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 800px) {
       font-size: 15px;
     }
   }
@@ -40,7 +41,7 @@ const Responsivestyledbar = styled.div`
     margin: 30px 0;
     font-size: 20px;
     display: flex;
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 800px) {
       margin: 15px 0;
       font-size: 10px;
     }
@@ -48,7 +49,7 @@ const Responsivestyledbar = styled.div`
 
   .userRole {
     font-size: 15px;
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 800px) {
       font-size: 8px;
     }
   }
@@ -57,36 +58,40 @@ const Responsivestyledbar = styled.div`
     font-size: 38px;
     margin-right: 10px;
     align-self: center;
-    @media only screen and (max-width: 700px) {
-      font-size: 20px;
+    @media only screen and (max-width: 800px) {
+      font-size: 18px;
       margin-right: 5px;
     }
   }
 
-  .menuItem {
+  .navLinks,
+  &:visited {
+    color: #00b33c;
+    text-decoration: none;
+    transition: all 0.5s;
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
+    padding: 10px 5px;
     font-size: 18px;
-    transition: all 0.5s;
     width: 100%;
 
-    @media only screen and (max-width: 700px) {
+    &:hover {
+      color: palevioletred;
+      transform: scale(1.2);
+    }
+
+    @media only screen and (max-width: 800px) {
       font-size: 12px;
       margin-right: 5px;
     }
   }
 
-  .menuItem:hover {
-    color: palevioletred;
-    transform: scale(1.2);
-  }
-
-  .selected {
+  .active {
     color: palevioletred;
     font-weight: bold;
     font-size: 20px;
-    @media only screen and (max-width: 700px) {
+    /* transition: all 0.5s; */
+    @media only screen and (max-width: 800px) {
       font-size: 14px;
     }
   }
@@ -105,23 +110,23 @@ const NavBar = (props) => {
               <br /> <span className="userRole">Developer</span>
             </span>
           </li>
-          <li
-            className={`menuItem ${props.selectedOption && "selected"}`}
-            onClick={props.displayDashboard}
-          >
-            <span>Dashboard</span>
-            <span>🏠</span>
+          <li>
+            <NavLink className="navLinks" to="/" end>
+              <span>Dashboard</span>
+              <span>🏠</span>
+            </NavLink>
           </li>
-          <li className="menuItem">
-            <span>Calender</span>
-            <span>📅</span>
+          <li>
+            <NavLink className="navLinks" to="/Calendar">
+              <span>Calender</span>
+              <span>📅</span>
+            </NavLink>
           </li>
-          <li
-            className={`menuItem ${!props.selectedOption && "selected"}`}
-            onClick={props.displayProgress}
-          >
-            <span>Project Status</span>
-            <span>🧾</span>
+          <li>
+            <NavLink className="navLinks" to="/progress">
+              <span>Project Status</span>
+              <span>🧾</span>
+            </NavLink>
           </li>
         </ul>
       </div>

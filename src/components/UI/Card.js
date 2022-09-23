@@ -15,7 +15,7 @@ const Cards = styled.div`
     margin-right: 30px;
   }
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 800px) {
     margin-right: 0px !important;
     margin-bottom: 10px;
   }
