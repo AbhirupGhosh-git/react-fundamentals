@@ -139,12 +139,7 @@ function App() {
 
       <div className="webpage">
         <div className={`${isVisible && "visible"} `}>
-          <NavBar
-            // selectedOption={selectedOption}
-            // displayDashboard={selectDashboardHandler}
-            // displayProgress={selectProgressHandler}
-            className={navWidth}
-          />
+          <NavBar className={navWidth} />
         </div>
 
         <main className={`content ${isVisible && "content--invisible"}`}>

@@ -2,9 +2,9 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const Responsivestyledbar = styled.div`
+  height: 100%;
   .navbar {
     background-color: antiquewhite;
-    min-height: 100vh;
     padding: 10px 20px;
     width: 100%;
 
@@ -17,10 +17,12 @@ const Responsivestyledbar = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
   }
 
   .navbar--invisible {
     display: none;
+    height: 100%;
   }
 
   .styledMenu {

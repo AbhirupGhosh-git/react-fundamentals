@@ -24,3 +24,9 @@
 .barChart--label {
   text-align: center;
 }
+
+@media only screen and (max-width: 800px) {
+  .barChart--inner {
+    height: 200px;
+  }
+}

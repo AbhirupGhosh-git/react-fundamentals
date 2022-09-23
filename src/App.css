@@ -5,10 +5,13 @@
   justify-content: flex-start;
   flex-direction: column;
   flex: 1;
+  overflow: scroll;
 }
+
 .header {
   background-color: antiquewhite;
   padding: 10px 20px;
+  min-width: 100%;
 }
 
 .webpage {
@@ -27,6 +30,10 @@
 }
 
 @media only screen and (max-width: 800px) {
+  .content {
+    padding: 15px;
+  }
+
   .displayFlex {
     flex-direction: column;
   }
@@ -41,6 +48,7 @@
 
   .visible {
     width: 100%;
+    min-height: 100vh;
   }
 }
 
