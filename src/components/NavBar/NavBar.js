@@ -3,12 +3,9 @@ import styled from "styled-components";
 
 const Responsivestyledbar = styled.div`
   height: 100%;
-
-  width: ${(props) => (props.visibility ? "100%" : "0%")};
-  transition: all 0.3s ease;
   .navbar {
     background-color: antiquewhite;
-    width: ${(props) => (props.visibility ? "100%" : "0%")};
+    width: ${(props) => (props.visibility === "true" ? "100%" : "0%")};
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -98,7 +95,7 @@ const Responsivestyledbar = styled.div`
 
 const NavBar = (props) => {
   return (
-    <Responsivestyledbar visibility={props.visibility}>
+    <Responsivestyledbar visibility={props.visibility.toString()}>
       <div className={`navbar`}>
         <ul className="styledMenu">
           <li className="companyName">🌏 MyApp</li>

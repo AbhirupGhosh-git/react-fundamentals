@@ -89,12 +89,8 @@ function App() {
 
       <div className="webpage">
         <div
-          className={`${isVisible && "visible"}`}
-          style={
-            isVisible
-              ? { transition: "all 0.3s ease" }
-              : { width: "0%", transition: "all 0.3s ease" }
-          }
+          className={`${isVisible && "visible"} navContainer`}
+          style={isVisible ? {} : { width: "0%" }}
         >
           <NavBar visibility={isVisible} />
         </div>

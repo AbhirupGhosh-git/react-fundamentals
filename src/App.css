@@ -30,6 +30,12 @@
   justify-content: space-between;
 }
 
+.navContainer {
+  min-height: 100vh;
+  transition: all 0.3s ease;
+  width: 20%;
+}
+
 @media only screen and (max-width: 800px) {
   .content {
     padding: 15px;
@@ -49,7 +55,6 @@
 
   .visible {
     width: 100%;
-    min-height: 100vh;
   }
 }
 
