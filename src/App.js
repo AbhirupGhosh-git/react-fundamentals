@@ -1,8 +1,5 @@
 import { useState } from "react";
 import NavBar from "./components/NavBar/NavBar";
-// import CardItem from "./components/CardItems/CardItem";
-// import Chart from "./components/UI/Chart";
-// import Table from "./components/Table/Table";
 
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
@@ -77,57 +74,10 @@ const test_data = {
 
 function App() {
   const [isVisible, setIsVisibility] = useState(false);
-  // const [selectedOption, setSelectedOption] = useState(true);
 
   const switchNavbar = () => {
     setIsVisibility(!isVisible);
   };
-
-  // let pageTitle = "";
-  // const selectDashboardHandler = () => {
-  //   setSelectedOption(true);
-  // };
-
-  // const selectProgressHandler = () => {
-  //   setSelectedOption(false);
-  // };
-
-  let navWidth = "navbar--invisible";
-  if (isVisible) {
-    navWidth = "navbar--visible";
-  } else {
-    navWidth = "navbar--invisible";
-  }
-
-  // let content = "";
-  // if (selectedOption) {
-  //   pageTitle = "🏠 Dashboard";
-  // content = (
-  //   <>
-  //     <div className="displayFlex">
-  //       <CardItem
-  //         sales={dummy_data.salesReport}
-  //         orders={dummy_data.orderReport}
-  //         visitors={dummy_data.visitorReport}
-  //       />
-  //     </div>
-
-  //     <div className="displayFlex">
-  //       <Chart
-  //         barChartData={dummy_data.visitSalesReport}
-  //         pieChartData={dummy_data.trafficSource}
-  //       />
-  //     </div>
-  //   </>
-  // );
-  // } else {
-  //   pageTitle = "🧾 Project Status";
-  // content = (
-  //   <div>
-  //     <Table projectStatus={test_data.projectStatus} />
-  //   </div>
-  // );
-  // }
 
   return (
     <>
@@ -138,16 +88,18 @@ function App() {
       </div>
 
       <div className="webpage">
-        <div className={`${isVisible && "visible"} `}>
-          <NavBar className={navWidth} />
+        <div
+          className={`${isVisible && "visible"}`}
+          style={
+            isVisible
+              ? { transition: "all 0.3s ease" }
+              : { width: "0%", transition: "all 0.3s ease" }
+          }
+        >
+          <NavBar visibility={isVisible} />
         </div>
 
         <main className={`content ${isVisible && "content--invisible"}`}>
-          {/* <div className="displayFlex">
-            <span className="dashboard-title">{pageTitle}</span>
-            <span>ℹ Overview</span>
-          </div> */}
-
           <Routes>
             <Route path="/" element={<Home dummy_data={dummy_data} />} />
             <Route
@@ -156,8 +108,6 @@ function App() {
             ></Route>
             <Route path="*" element={<NoMatch />} />
           </Routes>
-
-          {/* {content} */}
         </main>
       </div>
     </>

@@ -6,6 +6,7 @@
   flex-direction: column;
   flex: 1;
   overflow: scroll;
+  /* width: 100% !important; */
 }
 
 .header {

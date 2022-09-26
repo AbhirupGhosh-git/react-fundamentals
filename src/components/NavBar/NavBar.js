@@ -3,37 +3,34 @@ import styled from "styled-components";
 
 const Responsivestyledbar = styled.div`
   height: 100%;
+
+  width: ${(props) => (props.visibility ? "100%" : "0%")};
+  transition: all 0.3s ease;
   .navbar {
     background-color: antiquewhite;
-    padding: 10px 20px;
-    width: 100%;
-
-    @media only screen and (max-width: 800px) {
-      padding: 5px 10px;
-    }
-  }
-
-  .navbar--visible {
+    width: ${(props) => (props.visibility ? "100%" : "0%")};
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
-  }
-
-  .navbar--invisible {
-    display: none;
-    height: 100%;
+    overflow: hidden;
+    transition: all 0.3s ease;
   }
 
   .styledMenu {
     list-style: none;
     text-align: center;
+    padding: 10px 20px;
+    @media only screen and (max-width: 800px) {
+      padding: 5px 10px;
+    }
   }
 
   .companyName {
     color: palevioletred;
     font-size: 30px;
     font-weight: bold;
+
     @media only screen and (max-width: 800px) {
       font-size: 15px;
     }
@@ -101,8 +98,8 @@ const Responsivestyledbar = styled.div`
 
 const NavBar = (props) => {
   return (
-    <Responsivestyledbar>
-      <div className={`navbar ${props.className}`}>
+    <Responsivestyledbar visibility={props.visibility}>
+      <div className={`navbar`}>
         <ul className="styledMenu">
           <li className="companyName">🌏 MyApp</li>
           <li className="userName">
